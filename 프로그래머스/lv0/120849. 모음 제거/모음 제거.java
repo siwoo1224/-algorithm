@@ -15,6 +15,9 @@ class Solution {
             }
             answer += my_string.charAt(i);
         }
+        //answer = my_string.replaceAll("[aeiou]", "");
         return answer;
+        
+        
     }
 }
