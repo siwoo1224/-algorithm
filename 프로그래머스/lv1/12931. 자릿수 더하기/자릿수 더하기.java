@@ -10,4 +10,17 @@ public class Solution {
         }
         return answer;
     }
+    
+    public int solution2(int n) {
+        int answer = 0;
+
+        while (n != 0) {
+            System.out.println(n);
+            answer += n % 10;
+            System.out.println(answer);
+            n /= 10;
+        }
+
+        return answer;
+    }
 }
