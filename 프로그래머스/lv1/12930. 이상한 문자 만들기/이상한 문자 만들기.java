@@ -1,21 +1,21 @@
 class Solution {
     public String solution(String s) {
         String answer = "";
-        String[] str = s.split("");
+        String[] split = s.split("");
         int count = 0;
-        for(int i=0; i<str.length; i++){
-            if(str[i].equals(" ")){
+        for(int i=0; i<split.length; i++){
+            if(split[i].equals(" ")){
                 count = 0;
             }
             else if(count % 2 == 0){
-                str[i] = str[i].toUpperCase();
+                split[i] = split[i].toUpperCase();
                 count++;
             }
             else if(count % 2 != 0){
-                str[i] = str[i].toLowerCase();
+                split[i] = split[i].toLowerCase();
                 count++;
             }
-            answer += str[i];
+            answer += split[i];
         }
         return answer;
     }
