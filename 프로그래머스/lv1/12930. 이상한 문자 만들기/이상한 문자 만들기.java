@@ -1,22 +1,27 @@
 class Solution {
-    public String solution(String s) {
-        String answer = "";
-        String[] split = s.split("");
-        int count = 0;
-        for(int i=0; i<split.length; i++){
-            if(split[i].equals(" ")){
-                count = 0;
+    static public String solution(String s) {
+        String[] words = s.split(" ");
+        StringBuilder sb = new StringBuilder();
+
+        for (String word : words) {
+            for (int i = 0; i < word.length(); i++) {
+                if (i % 2 == 0) {
+                    sb.append(Character.toUpperCase(word.charAt(i)));
+
+                } else if (i % 2 == 1) {
+                    sb.append(Character.toLowerCase(word.charAt(i)));
+
+                }
             }
-            else if(count % 2 == 0){
-                split[i] = split[i].toUpperCase();
-                count++;
-            }
-            else if(count % 2 != 0){
-                split[i] = split[i].toLowerCase();
-                count++;
-            }
-            answer += split[i];
+            sb.append(" ");
         }
-        return answer;
+        if(sb.length() != s.length()){
+            sb.setLength(sb.length() - 1);
+            int x = s.length() - sb.length();
+            for (int i = 0; i < x; i++) {
+                sb.append(" ");
+            }
+        }
+        return sb.toString();
     }
 }
